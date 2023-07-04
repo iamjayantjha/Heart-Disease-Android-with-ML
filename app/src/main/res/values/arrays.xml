@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gender">
+        <item>Gender</item>
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+
+    <string-array name="cp">
+        <item>Chest Pain</item>
+        <item><b>0</b> Min 0-25%</item>
+        <item><b>1</b> Avg 25-50%</item>
+        <item><b>2</b> Max 50-75%</item>
+        <item><b>3</b> Max 75-100%</item>
+    </string-array>
+
+    <string-array name="ecg">
+        <item>Rest ECG</item>
+        <item><b>0</b> Min 0-25%</item>
+        <item><b>1</b> Avg 25-70%</item>
+        <item><b>2</b> Max 75-100%</item>
+    </string-array>
+
+    <string-array name="exang">
+        <item>Exang</item>
+        <item><b>0</b> No</item>
+        <item><b>1</b> Yes</item>
+    </string-array>
+</resources>

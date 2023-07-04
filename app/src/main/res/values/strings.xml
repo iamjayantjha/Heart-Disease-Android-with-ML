@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Heart Disease Detection</string>
+    <string name="heart_disease_detection">Heart Disease Detection</string>
+    <string name="please_provide_us_these_information_to_check_your_health_status">Please provide us these information to check your health status</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="gender">gender</string>
+    <string name="chest_pain_type">chest pain type</string>
+    <string name="cp_type">Chest Pain Type</string>
+</resources>

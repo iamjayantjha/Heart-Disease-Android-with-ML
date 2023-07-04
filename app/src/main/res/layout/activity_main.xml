@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/heart_disease_detection"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/segoe_bold"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/please_provide_us_these_information_to_check_your_health_status"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/segoe_regular"
+        android:layout_below="@+id/heading"/>
+
+    <RelativeLayout
+        android:layout_below="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/nextBtn"
+        android:id="@+id/rl1">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/name_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/black"
+        android:backgroundTint="#96B9B9B9">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:fontFamily="@font/segoe_regular"
+                android:cursorVisible="false"
+                android:background="@drawable/no_background"
+                android:hint="@string/name"
+                android:layout_marginStart="10dp"
+                android:autofillHints="name"
+                android:inputType="text"
+                android:layout_marginEnd="10dp"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/age_card"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_card"
+        android:layout_margin="15dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/black"
+        android:backgroundTint="#96B9B9B9">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:cursorVisible="false"
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@drawable/no_background"
+                android:fontFamily="@font/segoe_regular"
+                android:hint="@string/age"
+                android:layout_marginStart="10dp"
+                android:textAlignment="center"
+                android:autofillHints="age"
+                android:inputType="number"
+                android:layout_marginEnd="10dp"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/sex_card"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_card"
+        android:layout_toEndOf="@id/age_card"
+        android:layout_margin="15dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/black"
+        android:backgroundTint="#96B9B9B9">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/segoe_regular"
+                android:layout_marginStart="15dp"
+                android:contentDescription="@string/gender"
+                android:textAlignment="center"
+                android:id="@+id/gender"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_below="@+id/age_card"
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/heart" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/nextBtn"
+        android:id="@+id/rl2"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/cp_card_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cp_card"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/black"
+            android:backgroundTint="#96B9B9B9">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/segoe_regular"
+                    android:layout_marginStart="15dp"
+                    android:textAlignment="center"
+                    android:contentDescription="@string/chest_pain_type"
+                    android:id="@+id/cp"/>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cp_card"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/segoe_regular"
+            android:text="@string/cp_type"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentEnd="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/chol_card"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                android:backgroundTint="#96B9B9B9">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <EditText
+                        android:cursorVisible="false"
+                        android:id="@+id/chol"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@drawable/no_background"
+                        android:fontFamily="@font/segoe_regular"
+                        android:hint="Cholesterol"
+                        android:layout_marginStart="10dp"
+                        android:textAlignment="center"
+                        android:inputType="number"
+                        android:layout_marginEnd="10dp"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chol_card"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/segoe_regular"
+                android:textAlignment="center"
+                android:text="Serum Cholesterol in mg/dl"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/trestbps_card_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_below="@id/cp_card_rl">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/trestbps_card"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                android:backgroundTint="#96B9B9B9">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <EditText
+                        android:cursorVisible="false"
+                        android:id="@+id/trestbps"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@drawable/no_background"
+                        android:fontFamily="@font/segoe_regular"
+                        android:hint="Trest BPS"
+                        android:layout_marginStart="10dp"
+                        android:textAlignment="center"
+                        android:inputType="number"
+                        android:layout_marginEnd="10dp"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/trestbps_card"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/segoe_regular"
+                android:textAlignment="center"
+                android:text="Resting blood pressure in mm Hg "/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:layout_below="@id/cp_card_rl"
+            android:layout_alignParentEnd="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/fbs_card"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                android:backgroundTint="#96B9B9B9">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <EditText
+                        android:cursorVisible="false"
+                        android:id="@+id/fbs"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@drawable/no_background"
+                        android:fontFamily="@font/segoe_regular"
+                        android:hint="Fasting Blood Sugar"
+                        android:textAlignment="center"
+                        android:inputType="number"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fbs_card"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/segoe_regular"
+                android:textAlignment="center"
+                android:text="Fasting blood sugar in mg/dl"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/max_heart_rate_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/black"
+            android:backgroundTint="#96B9B9B9"
+            android:layout_below="@id/trestbps_card_rl">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <EditText
+                        android:cursorVisible="false"
+                    android:id="@+id/max_heart_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:fontFamily="@font/segoe_regular"
+                    android:background="@drawable/no_background"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:hint="Maximum Heart Rate"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/nextBtn"
+        android:visibility="gone"
+        android:id="@+id/rl3">
+
+        <RelativeLayout
+            android:id="@+id/restecg_card_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/restecg_card"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                android:backgroundTint="#96B9B9B9">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/segoe_regular"
+                        android:layout_marginStart="15dp"
+                        android:textAlignment="center"
+                        android:contentDescription="rest ecg"
+                        android:id="@+id/restecg"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/restecg_card"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/segoe_regular"
+                android:textAlignment="center"
+                android:text="Resting electrocardiographic results (values 0,1,2)"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentEnd="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/thal_card"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                android:backgroundTint="#96B9B9B9">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <EditText
+                        android:cursorVisible="false"
+                        android:id="@+id/thal"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@drawable/no_background"
+                        android:fontFamily="@font/segoe_regular"
+                        android:hint="Thal"
+                        android:layout_marginStart="10dp"
+                        android:textAlignment="center"
+                        android:inputType="number"
+                        android:layout_marginEnd="10dp"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thal_card"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/segoe_regular"
+                android:textAlignment="center"
+                android:text="Thal: 0 = normal; \n1 = fixed defect; \n2 = reversable defect"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/exang_card_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_below="@id/restecg_card_rl">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/exang_card"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                android:backgroundTint="#96B9B9B9">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/segoe_regular"
+                        android:layout_marginStart="15dp"
+                        android:textAlignment="center"
+                        android:contentDescription="exang"
+                        android:id="@+id/exang"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exang_card"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/segoe_regular"
+                android:textAlignment="center"
+                android:text="Exercise Induced Angina (1 = yes; 0 = no)"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:layout_below="@id/restecg_card_rl"
+            android:layout_alignParentEnd="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/slope_card"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                android:backgroundTint="#96B9B9B9">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <EditText
+                        android:cursorVisible="false"
+                        android:id="@+id/slope"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@drawable/no_background"
+                        android:fontFamily="@font/segoe_regular"
+                        android:hint="Slope"
+                        android:textAlignment="center"
+                        android:inputType="numberDecimal"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/slope_card"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/segoe_regular"
+                android:textAlignment="center"
+                android:text="The slope of the peak exercise ST segment"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/old_peak_card_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_below="@id/exang_card_rl">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/old_peak_card"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                android:backgroundTint="#96B9B9B9">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <EditText
+                        android:cursorVisible="false"
+                        android:id="@+id/old_peak"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@drawable/no_background"
+                        android:fontFamily="@font/segoe_regular"
+                        android:hint="Old Peak"
+                        android:layout_marginStart="10dp"
+                        android:textAlignment="center"
+                        android:inputType="number"
+                        android:layout_marginEnd="10dp"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/old_peak_card"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/segoe_regular"
+                android:textAlignment="center"
+                android:text="ST depression induced by exercise relative to rest"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:layout_below="@id/exang_card_rl"
+            android:layout_alignParentEnd="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/ca_card"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                android:backgroundTint="#96B9B9B9">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <EditText
+                        android:cursorVisible="false"
+                        android:id="@+id/ca"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@drawable/no_background"
+                        android:fontFamily="@font/segoe_regular"
+                        android:hint="CA"
+                        android:textAlignment="center"
+                        android:inputType="number"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ca_card"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/segoe_regular"
+                android:textAlignment="center"
+                android:text="Number of major vessels (0-3) colored by flourosopy"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/nextBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="100dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="#11FF00"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:cardBackgroundColor="@color/black"
+        android:layout_marginBottom="35dp"
+        android:layout_marginEnd="25dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_next"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/submitBtn"
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="100dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="#11FF00"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="@color/black"
+        android:visibility="gone"
+        android:layout_marginBottom="35dp"
+        android:layout_marginEnd="25dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check Health Status"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_next"
+                android:layout_toEndOf="@id/text2"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>
